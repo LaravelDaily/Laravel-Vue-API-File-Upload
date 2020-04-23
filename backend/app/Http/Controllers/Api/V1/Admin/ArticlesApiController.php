@@ -26,15 +26,17 @@ class ArticlesApiController extends Controller
 
     public function store(StoreArticleRequest $request)
     {
-        $article = Article::create($request->all());
 
-        if ($request->input('thumbnail', false)) {
-            $article->addMedia(storage_path('tmp/uploads/' . $request->input('thumbnail')))->toMediaCollection('thumbnail');
+        /** @var Article $article */
+        $article = Article::create($request->validated());
+
+        if ($request->file('thumbnail', false)) {
+            $article->addMedia($request->file('thumbnail'))->toMediaCollection('thumbnail');
         }
 
-        return (new ArticleResource($article))
-            ->response()
-            ->setStatusCode(Response::HTTP_CREATED);
+        $article = $article->fresh();
+
+        return new ArticleResource($article);
 
     }
 

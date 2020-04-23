@@ -11,15 +11,15 @@ class StoreArticleRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('article_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return true;
-
     }
 
     public function rules()
     {
         return [
+            'title' => ['required', 'string'],
+            'content' => ['required', 'string'],
+            'thumbnail'   => ['image', 'dimensions:max_width=1000,max_height=1000'],
         ];
 
     }

@@ -12,9 +12,9 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Articles
     Route::post('articles/media', 'ArticlesApiController@storeMedia')->name('articles.storeMedia');
-    Route::apiResource('articles', 'ArticlesApiController');
 
 });
 
+Route::apiResource('articles', 'Api\V1\Admin\ArticlesApiController');
 Route::post('/register', 'Api\V1\RegisterController@register');
 

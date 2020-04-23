@@ -8,7 +8,8 @@ class ArticleResource extends JsonResource
 {
     public function toArray($request)
     {
-        return parent::toArray($request);
-
+        return array_merge(parent::toArray($request), [
+            'thumbnail_url' => env('APP_URL') . $this->resource->thumbnail->url
+        ]);
     }
 }
