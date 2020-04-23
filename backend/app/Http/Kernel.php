@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use Fruitcake\Cors\HandleCors;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -12,13 +13,13 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        HandleCors::class,
     ];
 
     protected $middlewareGroups = [
         'api' => [
             'throttle:60,1',
             'bindings',
-            \App\Http\Middleware\AuthGates::class,
         ],
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
