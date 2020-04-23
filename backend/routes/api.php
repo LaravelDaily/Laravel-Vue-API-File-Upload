@@ -15,3 +15,6 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     Route::apiResource('articles', 'ArticlesApiController');
 
 });
+
+Route::post('/register', 'Api\V1\RegisterController@register');
+

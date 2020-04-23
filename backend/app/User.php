@@ -39,6 +39,7 @@ class User extends Authenticatable
         'deleted_at',
         'remember_token',
         'email_verified_at',
+        'avatar',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
