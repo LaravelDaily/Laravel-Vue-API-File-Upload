@@ -1,6 +1,6 @@
 # Laravel-Vue-API-File-Upload
 
-Repository for the article:
+Repository for the article [Laravel API: How to Upload File from Vue.js](https://quickadminpanel.com/blog/laravel-api-how-to-upload-file-from-vue-js/)
 
 There are two pages: 
 
@@ -13,6 +13,7 @@ There are two pages:
 - - - - -
 
 API for the Article example was generated with our QuickAdminPanel generator: [QuickAdminPanel.com](https://quickadminpanel.com)
+
 Read more: [New API Generator 2019 – now with Laravel Passport!](https://quickadminpanel.com/blog/new-api-generator-2019-now-with-laravel-passport/)
 
 - - - - -
